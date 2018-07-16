@@ -2,7 +2,9 @@
 
 namespace app\controllers;
 
-class User
+use vendor\core\base\Controller;
+
+class User extends Controller
 {
     public function indexAction()
     {
