@@ -2,19 +2,24 @@
 
 namespace app\controllers;
 
-class Catalog
+class NewUser
 {
     public function indexAction()
     {
         echo __METHOD__;
     }
 
-    public function sortAction()
+    public function testAction()
     {
         echo __METHOD__;
     }
 
-    public function itemAction()
+    public function testPageAction()
+    {
+        echo __METHOD__;
+    }
+
+    public function after()
     {
         echo __METHOD__;
     }

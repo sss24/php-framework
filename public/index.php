@@ -8,6 +8,7 @@ require '../vendor/libs/functions.php';
 $query = $_SERVER['QUERY_STRING'];
 
 define('ROOT', dirname(__DIR__));
+define('APP', dirname(__DIR__) . '/app');
 
 spl_autoload_register(function ($className) {
     debug($className);
