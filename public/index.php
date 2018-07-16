@@ -11,7 +11,7 @@ define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__) . '/app');
 
 spl_autoload_register(function ($className) {
-    debug($className);
+    //debug($className);
     $file = ROOT . '/' . str_replace('\\', '/', $className) . '.php';
     if (is_file($file)) {
         require_once $file;

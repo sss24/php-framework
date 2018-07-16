@@ -59,6 +59,7 @@ class Router
      */
     public static function dispatch($url)
     {
+        $url = self::removeQueryStr($url);
         if (self::matchRoute($url)) {
             $controller = 'app\controllers\\' . self::$route['controller'];
             if (class_exists($controller)) {
@@ -67,7 +68,7 @@ class Router
                 if (method_exists($cObj, $action)) {
                     $cObj->$action();
                 } else {
-                    echo "контроллер $controller не имеет экшина $action";
+                    echo "контроллер $controller не имеет экшена $action";
                 }
             } else {
                 echo "контроллер $controller не найден";
@@ -95,5 +96,22 @@ class Router
     protected static function lowerCamelCase($name)
     {
         return lcfirst(self::upperCamelCase($name));
+    }
+
+    /**
+     * Отрезает GET параметры
+     * @param string $url
+     * @return string
+     */
+    protected static function removeQueryStr($url)
+    {
+        if ($url) {
+            $param = explode('&', $url, 2);
+            if (false === strpos($param[0], '=')) {
+                return rtrim($param[0], '/');
+            } else {
+                return '';
+            }
+        }
     }
 }
