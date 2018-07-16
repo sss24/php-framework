@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-class Users
+class User
 {
     public function indexAction()
     {

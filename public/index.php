@@ -3,9 +3,9 @@
 error_reporting(-1);
 
 use vendor\core\Router;
+require '../vendor/libs/functions.php';
 
 $query = $_SERVER['QUERY_STRING'];
-require '../vendor/libs/functions.php';
 
 define('ROOT', dirname(__DIR__));
 
@@ -21,7 +21,6 @@ Router::add('^page/?(?P<action>[a-z-]+)?$', ['controller' => 'posts']);
 //default rules
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
-
 Router::dispatch($query);
 
 
