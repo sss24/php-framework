@@ -2,12 +2,17 @@
 
 namespace app\controllers;
 
-use vendor\core\base\Controller;
-
-class Main extends Controller
+class Main extends App
 {
+
     public function indexAction()
     {
-        echo __METHOD__;
+        $this->layout = 'main';
+        $this->view = 'test';
+        //$this->layout = false;
+        //echo 111;
+        $data = ['1' => 'One', '2' => 'two'];
+        $this->set(compact('name', 'data'));
     }
+
 }

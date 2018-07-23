@@ -2,17 +2,17 @@
 
 namespace app\controllers;
 
-use vendor\core\base\Controller;
-
-class Page extends Controller
+class Page extends App
 {
     public function indexAction()
     {
-        echo __METHOD__;
     }
 
     public function viewAction()
     {
-        echo __METHOD__;
+    }
+
+    public function viewTestAction()
+    {
     }
 }
